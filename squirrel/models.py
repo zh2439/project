@@ -12,7 +12,7 @@ class Squirrel(models.Model):
             help_text=_('longitude of squirrel'),
     )
 
-    Unique_ID = models.CharField(
+    Unique_Squirrel_ID = models.CharField(
             max_length=100,
             help_text=_('unique squirrel id of squirrel'),
     )

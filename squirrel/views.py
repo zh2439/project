@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
+
 from .models import Squirrel
 from .forms import Update,Add
 
@@ -39,3 +40,13 @@ def update(request,Unique_SquirrelID):
     }
     return render(request, 'squirrel/update.html', context)
 
+def map(request):
+    squirrels = Squirrel.objects.all()
+    sq_list = []
+    for sq in squirrels:
+        if len(sq_list)<100:
+            sq_list.append({'latitude':sq.Latitude,'longitude':sq.Longitude})
+    context = {
+            'sightings':sq_list,
+    }
+    return render(request,'squirrel/map.html',context)

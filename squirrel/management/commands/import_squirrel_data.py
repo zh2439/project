@@ -6,6 +6,8 @@ from django.core.management.base import BaseCommand
 
 from squirrel.models import Squirrel
 
+import re
+
 class Command(BaseCommand):
     help = 'Get squirrel data'
 
@@ -22,12 +24,15 @@ class Command(BaseCommand):
                 obj = Squirrel()
                 obj.Latitude = item['X']
                 obj.Longitude = item['Y']
-                obj.Unique_Squirrel_ID = item['Unique Squirrel ID']
+                obj.Unique_SquirrelID = item['Unique Squirrel ID']
                 obj.Shift = item['Shift']
                 obj.Date = datetime.date(int(item['Date'][-4:]),int(item['Date'][:2]),int(item['Date'][2:4]))
                 obj.Age = item['Age']
-
-                obj.save()
+                try:
+                    obj.save()
+                except Exception as e:
+                    msg1=f'ERROR:{e}at{obj.Unique_SquirrelID}'
+                    self.stdout.write(self.style.ERROR(msg1))
 
             msg = f'You are importing from {file_}'
 

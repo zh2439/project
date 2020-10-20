@@ -27,3 +27,4 @@ def update(request,Unique_SquirrelID):
     }
     return render(request, 'squirrel/update.html', context)
 
+def

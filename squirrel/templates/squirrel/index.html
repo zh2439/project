@@ -5,6 +5,7 @@
 		{% for squirrel in squirrels %}
 		<li><pre>{{ squirrel.Unique_SquirrelID}}</pre>
 		    <pre>{{ squirrel.Date }}</pre>
+		    <pre><a href="{% url 'squirrel:update' squirrel.Unique_SquirrelID %}">View & Update this sighting here!</a>
 		  
 		</li>
 		{% endfor %}

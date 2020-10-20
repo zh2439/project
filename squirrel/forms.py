@@ -13,5 +13,17 @@ class Update(ModelForm):
                 'Date',
                 'Age',
         ]
-        extra_kwargs = {'__all__': {'required': False}}
+
+class Add(ModelForm):
+    class Meta:
+        model=Squirrel
+
+        fields = [
+                'Latitude',
+                'Longitude',
+                'Unique_SquirrelID',
+                'Shift',
+                'Date',
+                'Age',
+        ]
 

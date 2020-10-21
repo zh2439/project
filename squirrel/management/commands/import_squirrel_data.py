@@ -28,6 +28,24 @@ class Command(BaseCommand):
                 obj.Shift = item['Shift']
                 obj.Date = datetime.date(int(item['Date'][-4:]),int(item['Date'][:2]),int(item['Date'][2:4]))
                 obj.Age = item['Age']
+                obj.Primary_Color = item['Primary Fur Color']
+                obj.location = item['Location']
+                obj.Specific_Location = item['Specific Location']
+                obj.Running = True if item['Running'] == 'true' else False
+                obj.Chasing = True if item['Chasing'] == 'true' else False
+                obj.Climbing = True if item['Climbing'] == 'true' else False
+                obj.Eating = True if item['Eating'] == 'true' else False
+                obj.Foraging = True if item['Foraging'] == 'true' else False
+                obj.Other_activities = item['Other Activities']
+                obj.Kuks = True if item['Kuks'] == 'true' else False
+                obj.Quaas = True if item['Quaas'] == 'true' else False
+                obj.Moans = True if item['Moans'] == 'true' else False
+                obj.Tail_Flags = True if item['Tail flags'] == 'true' else False
+                obj.Tail_Twitches = True if item['Tail twitches'] == 'true' else False
+                obj.Approaches = True if item['Approaches'] == 'true' else False
+                obj.Indifferent = True if item['Indifferent'] == 'true' else False
+                obj.Runs_From = True if item['Runs from'] == 'true' else False
+
                 try:
                     obj.save()
                 except Exception as e:

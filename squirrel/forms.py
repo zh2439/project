@@ -18,12 +18,5 @@ class Add(ModelForm):
     class Meta:
         model=Squirrel
 
-        fields = [
-                'Latitude',
-                'Longitude',
-                'Unique_SquirrelID',
-                'Shift',
-                'Date',
-                'Age',
-        ]
+        fields = '__all__'
 

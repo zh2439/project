@@ -5,6 +5,10 @@ from django.http import JsonResponse
 from .models import Squirrel
 from .forms import Update,Add
 
+def home(request):
+
+    return render(request,'squirrel/home.html',{})
+
 def index(request):
     squirrels = Squirrel.objects.all()
     context = {
@@ -15,12 +19,12 @@ def index(request):
 
 def add(request):
     if request.method == 'POST':
-        form = Update(request.POST)
+        form = Add(request.POST)
         if form.is_valid():
             form.save()
             return redirect("/sightings/")
 
-    form=Update()
+    form=Add()
     context = {
             'form':form,
     }

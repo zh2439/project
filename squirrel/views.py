@@ -5,6 +5,10 @@ from django.http import JsonResponse
 from .models import Squirrel
 from .forms import Update,Add
 
+def home(request):
+
+    return render(request,'squirrel/home.html',{})
+
 def index(request):
     squirrels = Squirrel.objects.all()
     context = {

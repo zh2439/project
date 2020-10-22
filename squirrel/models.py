@@ -58,12 +58,12 @@ class Squirrel(models.Model):
     )
 
     BLACK='Black'
-    GREY='Grey'
+    GRAY='Gray'
     CINNAMON='Cinnamon'
 
     PRI_COLOR_CHOICES=[
             (BLACK,_('Black')),
-            (GREY,_('Grey')),
+            (GRAY,_('Gray')),
             (CINNAMON,_('Cinnamon')),
     ]
 

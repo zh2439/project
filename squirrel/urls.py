@@ -8,7 +8,7 @@ urlpatterns = [
         path('',views.home,name='home'),
         path('sightings/',views.index),
         path('sightings/add/',views.add,name='add'),
-
-        path('sightings/<Unique_SquirrelID>/',views.update,name='update'),
         path('map/', views.map, name='map'),
+        path('sightings/stats/',views.stats, name='stats'),
+        path('sightings/<Unique_SquirrelID>/',views.update,name='update'),
 ]
